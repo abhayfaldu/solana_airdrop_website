@@ -6,13 +6,79 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Abhay | solana-airdrop</title>
 		<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+		<style>
+			:root {
+				--background-color: #0d1117;
+				--primary: #c9d1d9;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: sans-serif;
+			}
+			body {
+				display: grid;
+				place-items: center;
+				height: 100vh;
+				background-color: var(--background-color);
+				color: var(--primary);
+			}
+			main {
+				text-align: center;
+			}
+			h1 {
+				margin-bottom: 30px;
+			}
+			h2 {
+				color: #ff6161;
+				text-align: center;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+				margin: auto;
+				gap: 20px;
+				max-width: 350px;
+				min-width: 350px;
+			}
+			label {
+				margin-top: 30px;
+			}
+			label + input {
+				padding: 8px 16px;
+			}
+			form > div {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			form > div span {
+				color: #68ff7a;
+			}
+			form :nth-child(3) > input {
+				max-width: 100px;
+				background-color: rgb(47, 203, 255);
+				color: var(--background-color);
+				border: none;
+				border-radius: 5px;
+				padding: 8px 16px;
+			}
+		</style>
 	</head>
 	<body>
-		<form>
-			<label for="publicKey">Enter address you want to airdrop in</label>
-			<input type="text" id="publicKey" />
-			<input type="submit" value="Send sol" />
-		</form>
+		<main>
+			<h1>AirDrop Sol</h1>
+			<h2>This tool does *NOT* give real $SOL or Solana tokens.</h2>
+			<form>
+				<label for="publicKey">Enter your wallet public key</label>
+				<input type="text" id="publicKey" placeholder="Public key" />
+				<div>
+					<p>AirDrop <span>1</span> sol to &nbsp;</p>
+					<input type="submit" value="Send sol" />
+				</div>
+			</form>
+		</main>
 	</body>
 	<script>
 		const { Connection, PublicKey } = solanaWeb3;
